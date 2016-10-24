@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup as bs
-import urllib
 import requests
-from urllib import re
+import urllib
 
 
 url_slice1 = r'http://mp3clan.ws/mp3/'
@@ -15,7 +14,7 @@ titles = soup.find_all('div', {'class': 'unselectable'})
 count = 1
 for i in titles:
     if count <= 20:
-        print count, '.', i.text
+        print(count, '.', i.text)
         count = count + 1
 temp_html = []
 links = []
@@ -29,4 +28,4 @@ mp3 = response.read()
 f = open("thisshouldwork.mp3", "w")
 f.write(mp3)
 f.close()
-print "Done"
+print("Done")
